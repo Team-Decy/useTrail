@@ -1,17 +1,24 @@
-type Greeting @entity {
+type Shipment @entity {
   id: ID!
-  sender: Sender!
-  greeting: String!
-  premium: Boolean
-  value: BigInt
-  createdAt: BigInt!
-  transactionHash: String!
+  origin: String!
+  destination: String!
+  status: String!
+  supplier: Bytes!
+  transporter: Bytes!
+  retailer: Bytes!
+  timestamp: BigInt!
 }
 
-type Sender @entity {
+type User @entity {
   id: ID!
-  address: Bytes!
-  greetings: [Greeting!] @derivedFrom(field: "sender")
-  createdAt: BigInt!
-  greetingCount: BigInt!
+  address: Bytes! @index
+  role: String!
+}
+
+type Payment @entity {
+  id: ID!
+  amount: BigInt!
+  timestamp: BigInt!
+  sender: Bytes!
+  receiver: Bytes!
 }
