@@ -34,6 +34,9 @@ Before you begin, you need to install the following tools:
 5. Create a local subgraph (yarn local-create)
 6. Build and deploy the subgraph to the local node (yarn local-ship)
 
+## usetrail entities 
+
+
 ## Getting Started with usetrails repository
 
 Clone the repository.
