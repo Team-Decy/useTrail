@@ -1,44 +1,49 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { Contract } from "ethers";
+import * as fs from "fs";
+import * as path from "path";
 
 /**
- * Deploys a contract named "YourContract" using the deployer account and
- * constructor arguments set to the deployer address
+ * Deploys contracts and copies their ABI files to a specified directory.
  *
  * @param hre HardhatRuntimeEnvironment object.
  */
-const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  /*
-    On localhost, the deployer account is the one that comes with Hardhat, which is already funded.
-
-    When deploying to live networks (e.g `yarn deploy --network sepolia`), the deployer account
-    should have sufficient balance to pay for the gas fees for contract creation.
-
-    You can generate a random account with `yarn generate` which will fill DEPLOYER_PRIVATE_KEY
-    with a random private key in the .env file (then used on hardhat.config.ts)
-    You can run the `yarn account` command to check your balance in every network.
-  */
+const deployAndCopyAbis: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployer } = await hre.getNamedAccounts();
-  const { deploy } = hre.deployments;
+  const { deploy, getArtifact } = hre.deployments;
 
-  await deploy("YourContract", {
-    from: deployer,
-    // Contract constructor arguments
-    args: [deployer],
-    log: true,
-    // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
-    // automatically mining the contract deployment transaction. There is no effect on live networks.
-    autoMine: true,
-  });
+  // Define the contracts and their constructor arguments
+  const contracts = [
+    { name: "Auth", args: [] },
+    { name: "PaymentSystem", args: [] },
+    { name: "RoleManagement", args: [] },
+    { name: "ShipmentTracking", args: [] },
+  ];
 
-  // Get the deployed contract to interact with it after deploying.
-  const yourContract = await hre.ethers.getContract<Contract>("YourContract", deployer);
-  console.log("👋 Initial greeting:", await yourContract.greeting());
+  const targetDir = path.resolve(__dirname, "../../nextjs/contracts");
+  const targetDir2 = path.resolve(__dirname, "../../subgraph/abis");
+
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+
+  for (const contract of contracts) {
+    await deploy(contract.name, {
+      from: deployer,
+      args: contract.args,
+      log: true,
+      autoMine: true,
+    });
+
+    const artifact = await getArtifact(contract.name);
+    const abiPath = path.resolve(targetDir, `${contract.name}.json`);
+    const abiPath2 = path.resolve(targetDir2, `${contract.name}.json`);
+    fs.writeFileSync(abiPath, JSON.stringify(artifact.abi, null, 2));
+    fs.writeFileSync(abiPath2, JSON.stringify(artifact.abi, null, 2));
+
+    console.log(`ABI for ${contract.name} copied to ${abiPath}`);
+  }
 };
 
-export default deployYourContract;
-
-// Tags are useful if you have multiple deploy files and only want to run one of them.
-// e.g. yarn deploy --tags YourContract
-deployYourContract.tags = ["YourContract"];
+export default deployAndCopyAbis;
+deployAndCopyAbis.tags = ["all"];
