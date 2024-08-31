@@ -1,6 +1,6 @@
-# Scaffold-ETH 2 and The Graph
+# Usetrail
 
-Uses a subgraph from The Graph to index and query blockchain data.
+Uses a subgraph from The Graph to index and query blockchain data on shipping and also uses scaffold-eth and nextjs
 
 ## 🧑🏼‍🚀 The Graph
 
@@ -23,9 +23,9 @@ Before you begin, you need to install the following tools:
 -   [Git](https://git-scm.com/downloads)
 -   [Docker](https://docs.docker.com/get-docker/)
 
-&nbsp;
 
-## High level steps to create a subgraph
+
+## usetrail subgraph 
 
 1. Create entities (schema.graphql)
 2. Create mapping functions (mapping.ts)
@@ -34,9 +34,7 @@ Before you begin, you need to install the following tools:
 5. Create a local subgraph (yarn local-create)
 6. Build and deploy the subgraph to the local node (yarn local-ship)
 
-More information at https://thegraph.com/docs/en/developing/creating-a-subgraph/
-
-## Getting Started with subgraph-package of Scaffold-ETH 2
+## Getting Started with usetrails repository
 
 Clone the repository.
 
@@ -79,35 +77,6 @@ yarn deploy
 
 If you navigate to http://localhost:3000 you should see the NextJS application. Explore the menus and features of Scaffold-ETH 2! Someone call in an emergency, cause hot damn that is fire! 🔥
 
-&nbsp;
-
-## 🚀 Setup The Graph Integration
-
-Now that we have spun up our blockchain, started our frontend application and deployed our smart contract, we can start setting up our subgraph and utilize The Graph!
-
-> Before following these steps be sure Docker is running!
-
-&nbsp;
-
-#### ✅ Step 1: Clean up any old data and spin up our docker containers ✅
-
-First run the following to clean up any old data. Do this if you need to reset everything.
-
-```
-yarn clean-node
-```
-
-> We can now spin up a graph node by running the following command… 🧑‍🚀
-
-```
-yarn run-node
-```
-
-This will spin up all the containers for The Graph using docker-compose. You will want to keep this window open at all times so that you can see log output from Docker.
-
-> As stated before, be sure to keep this window open so that you can see any log output from Docker. 🔎
-
-> NOTE FOR LINUX USERS: If you are running Linux you will need some additional changes to the project.
 
 ##### Linux Only
 
@@ -129,53 +98,8 @@ You might also need to add a firewall exception for port 8432. As an example for
 sudo ufw allow 8545/tcp
 ```
 
-&nbsp;
 
-#### ✅ Side Quest: Run a Matchstick Test ✅
-
-Matchstick is a [unit testing framework](https://thegraph.com/docs/en/developing/unit-testing-framework/), developed by [LimeChain](https://limechain.tech/), that enables subgraph developers to test their mapping logic in a sandboxed environment and deploy their subgraphs with confidence!
-
-The project comes with a pre-written test located in `packages/subgraph/tests/asserts.test.ts`
-
-To test simply type....
-
-```
-yarn subgraph:test
-```
-
-> This will run `graph test` and automatically download the needed files for testing.
-
-You should receive the following output.
-
-```
-Fetching latest version tag...
-Downloading release from https://github.com/LimeChain/matchstick/releases/download/0.6.0/binary-macos-11-m1
-binary-macos-11-m1 has been installed!
-
-___  ___      _       _         _   _      _
-|  \/  |     | |     | |       | | (_)    | |
-| .  . | __ _| |_ ___| |__  ___| |_ _  ___| | __
-| |\/| |/ _` | __/ __| '_ \/ __| __| |/ __| |/ /
-| |  | | (_| | || (__| | | \__ \ |_| | (__|   <
-\_|  |_/\__,_|\__\___|_| |_|___/\__|_|\___|_|\_\
-
-Compiling...
-
-💬 Compiling asserts...
-
-Igniting tests 🔥
-
-asserts
---------------------------------------------------
-  Asserts:
-    √ Greeting and Sender entities - 0.102ms
-
-All 1 tests passed! 😎
-
-[Thu, 07 Mar 2024 15:10:26 -0800] Program executed in: 1.838s.
-```
-
-#### ✅ Step 2: Create and ship our Subgraph ✅
+#### ✅ Create and ship our subgraph Usetrail ✅
 
 Now we can open up a fourth window to finish setting up The Graph. 😅 In this forth window we will create our local subgraph!
 
