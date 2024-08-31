@@ -6,11 +6,7 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Auth
-<<<<<<< HEAD
-    network: localhost
-=======
-    network: sepolia
->>>>>>> main
+    network: sepolia 
     source:
       address: "0x86d87d9a2ECcB87aAF3C87EC4768E09BFB37f640"
       abi: Auth
@@ -33,7 +29,7 @@ dataSources:
 
   - kind: ethereum/contract
     name: RoleManagement
-    network: sepolia
+    network: sepolia 
     source:
       address: "0xFC81921dA0B6F29CE7Deb79dd820fa66aef7c610"
       abi: RoleManagement
