@@ -1,26 +1,105 @@
 specVersion: 0.0.4
-description: Greetings
-repository: https://github.com/scaffold-eth/se-2/packages/subgraph/
+description: A subgraph for Shipping data
+repository: https://github.com/Team-Decy/useTrail
 schema:
   file: ./src/schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: YourContract
-    network: localhost
+    name: Auth
+    network: mainnet
     source:
-      abi: YourContract
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+      address: "0xAuthContractAddress"
+      abi: Auth
+      startBlock: 12345678
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - Greeting
-        - Sender
+        - User
       abis:
-        - name: YourContract
-          file: ./abis/localhost_YourContract.json
+        - name: Auth
+          file: ./abis/Auth.json
+        - name: RoleManagement
+          file: ./abis/RoleManagement.json
       eventHandlers:
-        - event: GreetingChange(indexed address,string,bool,uint256)
-          handler: handleGreetingChange
+        - event: UserAuthorized(address)
+          handler: handleUserAuthorized
+      file: ./src/mapping.ts
+
+  - kind: ethereum/contract
+    name: RoleManagement
+    network: mainnet
+    source:
+      address: "0xRoleManagementContractAddress"
+      abi: RoleManagement
+      startBlock: 12345678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - User
+      abis:
+        - name: RoleManagement
+          file: ./abis/RoleManagement.json
+      eventHandlers:
+        - event: RoleAssigned(address, string)
+          handler: handleRoleAssigned
+      file: ./src/mapping.ts
+
+  - kind: ethereum/contract
+    name: PaymentSystem
+    network: mainnet
+    source:
+      address: "0xPaymentSystemContractAddress"
+      abi: PaymentSystem
+      startBlock: 12345678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Payment
+        - Shipment
+        - User
+      abis:
+        - name: PaymentSystem
+          file: ./abis/PaymentSystem.json
+        - name: ShipmentTracking
+          file: ./abis/ShipmentTracking.json
+        - name: RoleManagement
+          file: ./abis/RoleManagement.json
+      eventHandlers:
+        - event: PaymentMade(address , address, uint256, uint256)
+          handler: handlePaymentMade
+      file: ./src/mapping.ts
+
+  - kind: ethereum/contract
+    name: ShipmentTracking
+    network: mainnet
+    source:
+      address: "0xShipmentTrackingContractAddress"
+      abi: ShipmentTracking
+      startBlock: 12345678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Shipment
+        - User
+        - Payment
+      abis:
+        - name: ShipmentTracking
+          file: ./abis/ShipmentTracking.json
+        - name: RoleManagement
+          file: ./abis/RoleManagement.json
+        - name: PaymentSystem
+          file: ./abis/PaymentSystem.json
+      eventHandlers:
+        - event: ShipmentCreated(uint256,string, string, address)
+          handler: handleShipmentCreated
+        - event: ShipmentUpdated(uint256,string, string, address)
+          handler: handleShipmentUpdated  
       file: ./src/mapping.ts
