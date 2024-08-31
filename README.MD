@@ -52,7 +52,7 @@ The subgraph indexes shipment events emitted by the `ShipmentTracking` contract.
 
 ### **Subgraph Deployment**
 - **Hosted on**: The Graph Hosted Service
-- **Subgraph URL**: `https://thegraph.com/explorer/subgraph/your-subgraph-name`
+- **Subgraph URL**: `https://api.studio.thegraph.com/proxy/87779/usetrail/y`
 
 ## **Installation and Setup**
 
