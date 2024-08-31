@@ -1,0 +1,102 @@
+specVersion: 0.0.4
+description: A subgraph for Shipping data
+repository: https://github.com/Team-Decy/useTrail
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Auth
+    network: localhost
+    source:
+      address: "0x1234567890abcdef1234567890abcdef12345678"
+      abi: Auth
+      startBlock: 12345678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - User
+      abis:
+        - name: Auth
+          file: Auth\Auth.json
+        - name: RoleManagement
+          file: Auth\RoleManagement.json
+      eventHandlers:
+        - event: UserAuthorized(indexed address)
+          handler: handleUserAuthorized
+      file: Auth\Auth.wasm
+  - kind: ethereum/contract
+    name: RoleManagement
+    network: localhost
+    source:
+      address: "0x1234567890abcdef1234567890abcdef12345678"
+      abi: RoleManagement
+      startBlock: 12345678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - User
+      abis:
+        - name: RoleManagement
+          file: RoleManagement\RoleManagement.json
+      eventHandlers:
+        - event: RoleAssigned(indexed address,string)
+          handler: handleRoleAssigned
+      file: Auth\Auth.wasm
+  - kind: ethereum/contract
+    name: PaymentSystem
+    network: localhost
+    source:
+      address: "0x1234567890abcdef1234567890abcdef12345678"
+      abi: PaymentSystem
+      startBlock: 12345678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Payment
+        - Shipment
+        - User
+      abis:
+        - name: PaymentSystem
+          file: PaymentSystem\PaymentSystem.json
+        - name: ShipmentTracking
+          file: PaymentSystem\ShipmentTracking.json
+        - name: RoleManagement
+          file: PaymentSystem\RoleManagement.json
+      eventHandlers:
+        - event: PaymentMade(indexed address,indexed address,uint256,uint256)
+          handler: handlePaymentMade
+      file: Auth\Auth.wasm
+  - kind: ethereum/contract
+    name: ShipmentTracking
+    network: localhost
+    source:
+      address: "0x1234567890abcdef1234567890abcdef12345678"
+      abi: ShipmentTracking
+      startBlock: 12345678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Shipment
+        - User
+        - Payment
+      abis:
+        - name: ShipmentTracking
+          file: ShipmentTracking\ShipmentTracking.json
+        - name: RoleManagement
+          file: ShipmentTracking\RoleManagement.json
+        - name: PaymentSystem
+          file: ShipmentTracking\PaymentSystem.json
+      eventHandlers:
+        - event: ShipmentCreated(uint256,string,string,address)
+          handler: handleShipmentCreated
+        - event: StatusUpdated(uint256,string,address)
+          handler: handleShipmentUpdated
+      file: Auth\Auth.wasm

@@ -1,0 +1,24 @@
+type Shipment @entity {
+  id: ID!
+  origin: String!
+  destination: String!
+  status: String!
+  supplier: Bytes!
+  transporter: Bytes!
+  retailer: Bytes!
+  timestamp: BigInt!
+}
+
+type User @entity {
+  id: ID!
+  address: Bytes! @index
+  role: String!
+}
+
+type Payment @entity {
+  id: ID!
+  amount: BigInt!
+  timestamp: BigInt!
+  sender: Bytes!
+  receiver: Bytes!
+}
