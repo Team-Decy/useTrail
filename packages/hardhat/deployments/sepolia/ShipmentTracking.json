@@ -1,0 +1,375 @@
+{
+  "address": "0xDE358645897C31E7D80501178dD0672aC4198BF5",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "origin",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "destination",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "supplier",
+          "type": "address"
+        }
+      ],
+      "name": "ShipmentCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "updatedBy",
+          "type": "address"
+        }
+      ],
+      "name": "StatusUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_origin",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_destination",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "_transporter",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_retailer",
+          "type": "address"
+        }
+      ],
+      "name": "createShipment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shipmentId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getShipment",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "shipmentCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "shipments",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "origin",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "destination",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "supplier",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "transporter",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "retailer",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shipmentId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_status",
+          "type": "string"
+        }
+      ],
+      "name": "updateStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xdd651e918babf648b91492a519dace4a1e16ce1d48f2621a2389e3ae74884541",
+  "receipt": {
+    "to": null,
+    "from": "0x64dB28D8eFf926fdcc10B97170b6243dF7411d61",
+    "contractAddress": "0xDE358645897C31E7D80501178dD0672aC4198BF5",
+    "transactionIndex": 37,
+    "gasUsed": "694687",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x6e19dc10f1caa9a04caa9323d61c9e38ee5ac0eb6ac94d487008d9d6a5915ab6",
+    "transactionHash": "0xdd651e918babf648b91492a519dace4a1e16ce1d48f2621a2389e3ae74884541",
+    "logs": [],
+    "blockNumber": 6605372,
+    "cumulativeGasUsed": "8312879",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "bb7bc85ff8dfd589c7a69bd23c557650",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"origin\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"destination\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"supplier\",\"type\":\"address\"}],\"name\":\"ShipmentCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"status\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"updatedBy\",\"type\":\"address\"}],\"name\":\"StatusUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_origin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_destination\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_transporter\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_retailer\",\"type\":\"address\"}],\"name\":\"createShipment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shipmentId\",\"type\":\"uint256\"}],\"name\":\"getShipment\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"shipmentCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"shipments\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"origin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"destination\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"status\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"supplier\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"transporter\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"retailer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shipmentId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_status\",\"type\":\"string\"}],\"name\":\"updateStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ShipmentTracking.sol\":\"ShipmentTracking\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/ShipmentTracking.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ncontract ShipmentTracking {\\r\\n    \\r\\n    // Struct to represent a Shipment\\r\\n    struct Shipment {\\r\\n        uint256 id;\\r\\n        string origin;\\r\\n        string destination;\\r\\n        string status;\\r\\n        address supplier;\\r\\n        address transporter;\\r\\n        address retailer;\\r\\n        uint256 timestamp;\\r\\n    }\\r\\n\\r\\n    // Mapping to store shipments\\r\\n    mapping(uint256 => Shipment) public shipments;\\r\\n\\r\\n    // Counter for Shipment IDs\\r\\n    uint256 public shipmentCount = 0;\\r\\n\\r\\n    // Event to emit when a shipment is created\\r\\n    event ShipmentCreated(uint256 id, string origin, string destination, address supplier);\\r\\n\\r\\n    // Event to emit when a shipment status is updated\\r\\n    event StatusUpdated(uint256 id, string status, address updatedBy);\\r\\n\\r\\n    // Function to create a new shipment\\r\\n    function createShipment(string memory _origin, string memory _destination, address _transporter, address _retailer) public {\\r\\n        shipmentCount++;\\r\\n        shipments[shipmentCount] = Shipment(\\r\\n            shipmentCount,\\r\\n            _origin,\\r\\n            _destination,\\r\\n            \\\"Created\\\",\\r\\n            msg.sender,\\r\\n            _transporter,\\r\\n            _retailer,\\r\\n            block.timestamp\\r\\n        );\\r\\n        emit ShipmentCreated(shipmentCount, _origin, _destination, msg.sender);\\r\\n    }\\r\\n\\r\\n    // Function to update the status of a shipment\\r\\n    function updateStatus(uint256 _shipmentId, string memory _status) public {\\r\\n        Shipment storage shipment = shipments[_shipmentId];\\r\\n        require(msg.sender == shipment.supplier || msg.sender == shipment.transporter, \\\"Not authorized\\\");\\r\\n        shipment.status = _status;\\r\\n        shipment.timestamp = block.timestamp;\\r\\n        emit StatusUpdated(_shipmentId, _status, msg.sender);\\r\\n    }\\r\\n\\r\\n    // Function to get shipment details\\r\\n    function getShipment(uint256 _shipmentId) public view returns (uint256, string memory, string memory, string memory, address, address, address, uint256) {\\r\\n        Shipment storage shipment = shipments[_shipmentId];\\r\\n        return (\\r\\n            shipment.id,\\r\\n            shipment.origin,\\r\\n            shipment.destination,\\r\\n            shipment.status,\\r\\n            shipment.supplier,\\r\\n            shipment.transporter,\\r\\n            shipment.retailer,\\r\\n            shipment.timestamp\\r\\n        );\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x5ce892f587b94a03c09d4708d190eecdf73ef81cd0e791151fb5b945ec98b084\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080604052600060015534801561001557600080fd5b50610b8f806100256000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c8063092b37401461005c5780632ac08a931461008c578063aace20b71461009f578063b8f90d15146100b6578063d1b34dd8146100cb575b600080fd5b61006f61006a366004610715565b6100de565b604051610083989796959493929190610774565b60405180910390f35b61006f61009a366004610715565b6102f8565b6100a860015481565b604051908152602001610083565b6100c96100c43660046108a7565b6104e2565b005b6100c96100d936600461092c565b610649565b600081815260208190526040812080546004820154600583015460068401546007850154600186018054606097889788978b978897889788979596949594600288019460038901946001600160a01b039182169490821693911691879061014490610973565b80601f016020809104026020016040519081016040528092919081815260200182805461017090610973565b80156101bd5780601f10610192576101008083540402835291602001916101bd565b820191906000526020600020905b8154815290600101906020018083116101a057829003601f168201915b505050505096508580546101d090610973565b80601f01602080910402602001604051908101604052809291908181526020018280546101fc90610973565b80156102495780601f1061021e57610100808354040283529160200191610249565b820191906000526020600020905b81548152906001019060200180831161022c57829003601f168201915b5050505050955084805461025c90610973565b80601f016020809104026020016040519081016040528092919081815260200182805461028890610973565b80156102d55780601f106102aa576101008083540402835291602001916102d5565b820191906000526020600020905b8154815290600101906020018083116102b857829003601f168201915b505050505094509850985098509850985098509850985050919395975091939597565b6000602081905290815260409020805460018201805491929161031a90610973565b80601f016020809104026020016040519081016040528092919081815260200182805461034690610973565b80156103935780601f1061036857610100808354040283529160200191610393565b820191906000526020600020905b81548152906001019060200180831161037657829003601f168201915b5050505050908060020180546103a890610973565b80601f01602080910402602001604051908101604052809291908181526020018280546103d490610973565b80156104215780601f106103f657610100808354040283529160200191610421565b820191906000526020600020905b81548152906001019060200180831161040457829003601f168201915b50505050509080600301805461043690610973565b80601f016020809104026020016040519081016040528092919081815260200182805461046290610973565b80156104af5780601f10610484576101008083540402835291602001916104af565b820191906000526020600020905b81548152906001019060200180831161049257829003601f168201915b50505060048401546005850154600686015460079096015494956001600160a01b03928316959183169450909116915088565b600180549060006104f2836109ad565b9091555050604080516101008101825260018054808352602080840189815284860189905285518087018752600781526610dc99585d195960ca1b8184015260608601523360808601526001600160a01b0388811660a0870152871660c08601524260e08601526000928352908290529390208251815592519192919082019061057c9082610a23565b50604082015160028201906105919082610a23565b50606082015160038201906105a69082610a23565b5060808201516004820180546001600160a01b039283166001600160a01b03199182161790915560a084015160058401805491841691831691909117905560c084015160068401805491909316911617905560e0909101516007909101556001546040517fa75d99ecf835446987cef62552d97ec05b22b2ff20af1603b10e4716a266302b9161063b91879087903390610ae3565b60405180910390a150505050565b600082815260208190526040902060048101546001600160a01b031633148061067e575060058101546001600160a01b031633145b6106bf5760405162461bcd60e51b815260206004820152600e60248201526d139bdd08185d5d1a1bdc9a5e995960921b604482015260640160405180910390fd5b600381016106cd8382610a23565b504260078201556040517fb31680dc3c78d78b7d637e5735ddaae9faedb88cc90e5e3e03188e394430fa309061070890859085903390610b28565b60405180910390a1505050565b60006020828403121561072757600080fd5b5035919050565b6000815180845260005b8181101561075457602081850181015186830182015201610738565b506000602082860101526020601f19601f83011685010191505092915050565b60006101008a835280602084015261078e8184018b61072e565b905082810360408401526107a2818a61072e565b905082810360608401526107b6818961072e565b6001600160a01b03978816608085015295871660a084015250509190931660c082015260e00191909152949350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261080f57600080fd5b813567ffffffffffffffff8082111561082a5761082a6107e8565b604051601f8301601f19908116603f01168101908282118183101715610852576108526107e8565b8160405283815286602085880101111561086b57600080fd5b836020870160208301376000602085830101528094505050505092915050565b80356001600160a01b03811681146108a257600080fd5b919050565b600080600080608085870312156108bd57600080fd5b843567ffffffffffffffff808211156108d557600080fd5b6108e1888389016107fe565b955060208701359150808211156108f757600080fd5b50610904878288016107fe565b9350506109136040860161088b565b91506109216060860161088b565b905092959194509250565b6000806040838503121561093f57600080fd5b82359150602083013567ffffffffffffffff81111561095d57600080fd5b610969858286016107fe565b9150509250929050565b600181811c9082168061098757607f821691505b6020821081036109a757634e487b7160e01b600052602260045260246000fd5b50919050565b6000600182016109cd57634e487b7160e01b600052601160045260246000fd5b5060010190565b601f821115610a1e57600081815260208120601f850160051c810160208610156109fb5750805b601f850160051c820191505b81811015610a1a57828155600101610a07565b5050505b505050565b815167ffffffffffffffff811115610a3d57610a3d6107e8565b610a5181610a4b8454610973565b846109d4565b602080601f831160018114610a865760008415610a6e5750858301515b600019600386901b1c1916600185901b178555610a1a565b600085815260208120601f198616915b82811015610ab557888601518255948401946001909101908401610a96565b5085821015610ad35787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b848152608060208201526000610afc608083018661072e565b8281036040840152610b0e818661072e565b91505060018060a01b038316606083015295945050505050565b838152606060208201526000610b41606083018561072e565b905060018060a01b038316604083015294935050505056fea264697066735822122035207861534b950f4afcab09c7dc0c8dc1fb4b4478230f2937503fc322f4cb8164736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c8063092b37401461005c5780632ac08a931461008c578063aace20b71461009f578063b8f90d15146100b6578063d1b34dd8146100cb575b600080fd5b61006f61006a366004610715565b6100de565b604051610083989796959493929190610774565b60405180910390f35b61006f61009a366004610715565b6102f8565b6100a860015481565b604051908152602001610083565b6100c96100c43660046108a7565b6104e2565b005b6100c96100d936600461092c565b610649565b600081815260208190526040812080546004820154600583015460068401546007850154600186018054606097889788978b978897889788979596949594600288019460038901946001600160a01b039182169490821693911691879061014490610973565b80601f016020809104026020016040519081016040528092919081815260200182805461017090610973565b80156101bd5780601f10610192576101008083540402835291602001916101bd565b820191906000526020600020905b8154815290600101906020018083116101a057829003601f168201915b505050505096508580546101d090610973565b80601f01602080910402602001604051908101604052809291908181526020018280546101fc90610973565b80156102495780601f1061021e57610100808354040283529160200191610249565b820191906000526020600020905b81548152906001019060200180831161022c57829003601f168201915b5050505050955084805461025c90610973565b80601f016020809104026020016040519081016040528092919081815260200182805461028890610973565b80156102d55780601f106102aa576101008083540402835291602001916102d5565b820191906000526020600020905b8154815290600101906020018083116102b857829003601f168201915b505050505094509850985098509850985098509850985050919395975091939597565b6000602081905290815260409020805460018201805491929161031a90610973565b80601f016020809104026020016040519081016040528092919081815260200182805461034690610973565b80156103935780601f1061036857610100808354040283529160200191610393565b820191906000526020600020905b81548152906001019060200180831161037657829003601f168201915b5050505050908060020180546103a890610973565b80601f01602080910402602001604051908101604052809291908181526020018280546103d490610973565b80156104215780601f106103f657610100808354040283529160200191610421565b820191906000526020600020905b81548152906001019060200180831161040457829003601f168201915b50505050509080600301805461043690610973565b80601f016020809104026020016040519081016040528092919081815260200182805461046290610973565b80156104af5780601f10610484576101008083540402835291602001916104af565b820191906000526020600020905b81548152906001019060200180831161049257829003601f168201915b50505060048401546005850154600686015460079096015494956001600160a01b03928316959183169450909116915088565b600180549060006104f2836109ad565b9091555050604080516101008101825260018054808352602080840189815284860189905285518087018752600781526610dc99585d195960ca1b8184015260608601523360808601526001600160a01b0388811660a0870152871660c08601524260e08601526000928352908290529390208251815592519192919082019061057c9082610a23565b50604082015160028201906105919082610a23565b50606082015160038201906105a69082610a23565b5060808201516004820180546001600160a01b039283166001600160a01b03199182161790915560a084015160058401805491841691831691909117905560c084015160068401805491909316911617905560e0909101516007909101556001546040517fa75d99ecf835446987cef62552d97ec05b22b2ff20af1603b10e4716a266302b9161063b91879087903390610ae3565b60405180910390a150505050565b600082815260208190526040902060048101546001600160a01b031633148061067e575060058101546001600160a01b031633145b6106bf5760405162461bcd60e51b815260206004820152600e60248201526d139bdd08185d5d1a1bdc9a5e995960921b604482015260640160405180910390fd5b600381016106cd8382610a23565b504260078201556040517fb31680dc3c78d78b7d637e5735ddaae9faedb88cc90e5e3e03188e394430fa309061070890859085903390610b28565b60405180910390a1505050565b60006020828403121561072757600080fd5b5035919050565b6000815180845260005b8181101561075457602081850181015186830182015201610738565b506000602082860101526020601f19601f83011685010191505092915050565b60006101008a835280602084015261078e8184018b61072e565b905082810360408401526107a2818a61072e565b905082810360608401526107b6818961072e565b6001600160a01b03978816608085015295871660a084015250509190931660c082015260e00191909152949350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261080f57600080fd5b813567ffffffffffffffff8082111561082a5761082a6107e8565b604051601f8301601f19908116603f01168101908282118183101715610852576108526107e8565b8160405283815286602085880101111561086b57600080fd5b836020870160208301376000602085830101528094505050505092915050565b80356001600160a01b03811681146108a257600080fd5b919050565b600080600080608085870312156108bd57600080fd5b843567ffffffffffffffff808211156108d557600080fd5b6108e1888389016107fe565b955060208701359150808211156108f757600080fd5b50610904878288016107fe565b9350506109136040860161088b565b91506109216060860161088b565b905092959194509250565b6000806040838503121561093f57600080fd5b82359150602083013567ffffffffffffffff81111561095d57600080fd5b610969858286016107fe565b9150509250929050565b600181811c9082168061098757607f821691505b6020821081036109a757634e487b7160e01b600052602260045260246000fd5b50919050565b6000600182016109cd57634e487b7160e01b600052601160045260246000fd5b5060010190565b601f821115610a1e57600081815260208120601f850160051c810160208610156109fb5750805b601f850160051c820191505b81811015610a1a57828155600101610a07565b5050505b505050565b815167ffffffffffffffff811115610a3d57610a3d6107e8565b610a5181610a4b8454610973565b846109d4565b602080601f831160018114610a865760008415610a6e5750858301515b600019600386901b1c1916600185901b178555610a1a565b600085815260208120601f198616915b82811015610ab557888601518255948401946001909101908401610a96565b5085821015610ad35787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b848152608060208201526000610afc608083018661072e565b8281036040840152610b0e818661072e565b91505060018060a01b038316606083015295945050505050565b838152606060208201526000610b41606083018561072e565b905060018060a01b038316604083015294935050505056fea264697066735822122035207861534b950f4afcab09c7dc0c8dc1fb4b4478230f2937503fc322f4cb8164736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 377,
+        "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+        "label": "shipments",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_uint256,t_struct(Shipment)372_storage)"
+      },
+      {
+        "astId": 380,
+        "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+        "label": "shipmentCount",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_uint256,t_struct(Shipment)372_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct ShipmentTracking.Shipment)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Shipment)372_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Shipment)372_storage": {
+        "encoding": "inplace",
+        "label": "struct ShipmentTracking.Shipment",
+        "members": [
+          {
+            "astId": 357,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "id",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 359,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "origin",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 361,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "destination",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 363,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "status",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 365,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "supplier",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address"
+          },
+          {
+            "astId": 367,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "transporter",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address"
+          },
+          {
+            "astId": 369,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "retailer",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address"
+          },
+          {
+            "astId": 371,
+            "contract": "contracts/ShipmentTracking.sol:ShipmentTracking",
+            "label": "timestamp",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

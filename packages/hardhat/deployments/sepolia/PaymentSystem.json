@@ -1,0 +1,95 @@
+{
+  "address": "0x5F30568b229215B4b7618E1D410d5F9B61B00E73",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "payer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "payee",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "shipmentId",
+          "type": "uint256"
+        }
+      ],
+      "name": "PaymentMade",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shipmentId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address payable",
+          "name": "_supplier",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_retailer",
+          "type": "address"
+        }
+      ],
+      "name": "confirmDeliveryAndPay",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xbbcdd40571cf57c4b2a080db4f19af80ded4ee2c4950b7946df5d56956246d91",
+  "receipt": {
+    "to": null,
+    "from": "0x64dB28D8eFf926fdcc10B97170b6243dF7411d61",
+    "contractAddress": "0x5F30568b229215B4b7618E1D410d5F9B61B00E73",
+    "transactionIndex": 69,
+    "gasUsed": "150133",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x99cc54318cc2609116d932742a3ae399d8f72e77a7f13c6b3b10a9a2fbe1aa14",
+    "transactionHash": "0xbbcdd40571cf57c4b2a080db4f19af80ded4ee2c4950b7946df5d56956246d91",
+    "logs": [],
+    "blockNumber": 6605370,
+    "cumulativeGasUsed": "19498387",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "bb7bc85ff8dfd589c7a69bd23c557650",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"payer\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"payee\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shipmentId\",\"type\":\"uint256\"}],\"name\":\"PaymentMade\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shipmentId\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"_supplier\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_retailer\",\"type\":\"address\"}],\"name\":\"confirmDeliveryAndPay\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/PaymentSystem.sol\":\"PaymentSystem\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/PaymentSystem.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ncontract PaymentSystem {\\r\\n\\r\\n    // Event to emit when payment is made\\r\\n    event PaymentMade(address indexed payer, address indexed payee, uint256 amount, uint256 shipmentId);\\r\\n\\r\\n    // Function to make a payment upon delivery confirmation\\r\\n    function confirmDeliveryAndPay(uint256 _shipmentId, address payable _supplier, address _retailer) public payable {\\r\\n        require(msg.value > 0, \\\"Payment amount should be greater than zero\\\");\\r\\n        _supplier.transfer(msg.value);\\r\\n        emit PaymentMade(_retailer, _supplier, msg.value, _shipmentId);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x1304fab73256aa7b923a83b0eb65f7e651be86765e411a114296a5c5689404d1\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101c0806100206000396000f3fe60806040526004361061001e5760003560e01c8063ed75ac9414610023575b600080fd5b610036610031366004610148565b610038565b005b6000341161009f5760405162461bcd60e51b815260206004820152602a60248201527f5061796d656e7420616d6f756e742073686f756c642062652067726561746572604482015269207468616e207a65726f60b01b606482015260840160405180910390fd5b6040516001600160a01b038316903480156108fc02916000818181858888f193505050501580156100d4573d6000803e3d6000fd5b50816001600160a01b0316816001600160a01b03167f1f004c54eef332ef6912dae8f1775c102da23bec79ccf602eaaa072938e96b673486604051610123929190918252602082015260400190565b60405180910390a3505050565b6001600160a01b038116811461014557600080fd5b50565b60008060006060848603121561015d57600080fd5b83359250602084013561016f81610130565b9150604084013561017f81610130565b80915050925092509256fea26469706673582212203f8c67634617f428adbe95522f04d0085919b13354af80db6562530872b4dad964736f6c63430008110033",
+  "deployedBytecode": "0x60806040526004361061001e5760003560e01c8063ed75ac9414610023575b600080fd5b610036610031366004610148565b610038565b005b6000341161009f5760405162461bcd60e51b815260206004820152602a60248201527f5061796d656e7420616d6f756e742073686f756c642062652067726561746572604482015269207468616e207a65726f60b01b606482015260840160405180910390fd5b6040516001600160a01b038316903480156108fc02916000818181858888f193505050501580156100d4573d6000803e3d6000fd5b50816001600160a01b0316816001600160a01b03167f1f004c54eef332ef6912dae8f1775c102da23bec79ccf602eaaa072938e96b673486604051610123929190918252602082015260400190565b60405180910390a3505050565b6001600160a01b038116811461014557600080fd5b50565b60008060006060848603121561015d57600080fd5b83359250602084013561016f81610130565b9150604084013561017f81610130565b80915050925092509256fea26469706673582212203f8c67634617f428adbe95522f04d0085919b13354af80db6562530872b4dad964736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

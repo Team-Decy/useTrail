@@ -5,9 +5,9 @@
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
 const deployedContracts = {
-  31337: {
+  11155111: {
     Auth: {
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      address: "0x86d87d9a2ECcB87aAF3C87EC4768E09BFB37f640",
       abi: [
         {
           anonymous: false,
@@ -77,7 +77,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     PaymentSystem: {
-      address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      address: "0x5F30568b229215B4b7618E1D410d5F9B61B00E73",
       abi: [
         {
           anonymous: false,
@@ -137,7 +137,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     RoleManagement: {
-      address: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      address: "0xFC81921dA0B6F29CE7Deb79dd820fa66aef7c610",
       abi: [
         {
           anonymous: false,
@@ -218,7 +218,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     ShipmentTracking: {
-      address: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      address: "0xDE358645897C31E7D80501178dD0672aC4198BF5",
       abi: [
         {
           anonymous: false,

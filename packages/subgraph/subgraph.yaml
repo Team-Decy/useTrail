@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Auth
-    network: localhost 
+    network: sepolia 
     source:
-      address: "0x1234567890abcdef1234567890abcdef12345678"
+      address: "0x86d87d9a2ECcB87aAF3C87EC4768E09BFB37f640"
       abi: Auth
-      startBlock: 12345678
+      startBlock: 6605369
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -29,11 +29,11 @@ dataSources:
 
   - kind: ethereum/contract
     name: RoleManagement
-    network: localhost 
+    network: sepolia 
     source:
-      address: "0x1234567890abcdef1234567890abcdef12345678"
+      address: "0xFC81921dA0B6F29CE7Deb79dd820fa66aef7c610"
       abi: RoleManagement
-      startBlock: 12345678
+      startBlock: 6605371
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -52,9 +52,9 @@ dataSources:
     name: PaymentSystem
     network: localhost 
     source:
-      address: "0x1234567890abcdef1234567890abcdef12345678"
+      address: "0x5F30568b229215B4b7618E1D410d5F9B61B00E73"
       abi: PaymentSystem
-      startBlock: 12345678
+      startBlock: 6605370
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -79,9 +79,9 @@ dataSources:
     name: ShipmentTracking
     network: localhost 
     source:
-      address: "0x1234567890abcdef1234567890abcdef12345678"
+      address: "0xDE358645897C31E7D80501178dD0672aC4198BF5"
       abi: ShipmentTracking
-      startBlock: 12345678
+      startBlock: 6605372
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
