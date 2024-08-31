@@ -64,12 +64,12 @@ The subgraph indexes shipment events emitted by the `ShipmentTracking` contract.
 ### **Clone the Repository**
 ```bash
 git clone https://github.com/Team-Decy/useTrail.git
-cd logistics-tracking-system
+cd usetrail
 ```
 
 ### **Install Dependencies**
 ```bash
-npm install
+yarn install
 ```
 
 ### **Configure Environment Variables**
