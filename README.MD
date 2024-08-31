@@ -63,7 +63,7 @@ The subgraph indexes shipment events emitted by the `ShipmentTracking` contract.
 
 ### **Clone the Repository**
 ```bash
-git clone https://github.com/your-repo/logistics-tracking-system.git
+git clone https://github.com/Team-Decy/useTrail.git
 cd logistics-tracking-system
 ```
 
@@ -76,9 +76,7 @@ npm install
 Create a `.env` file in the root directory and add the following:
 
 ```bash
-NEXT_PUBLIC_GRAPHQL_ENDPOINT=https://api.thegraph.com/subgraphs/name/your-subgraph-name
-NEXT_PUBLIC_CONTRACT_ADDRESS_ROLE_MANAGEMENT=0xYourRoleManagementContractAddress
-NEXT_PUBLIC_CONTRACT_ADDRESS_SHIPMENT_TRACKING=0xYourShipmentTrackingContractAddress
+NEXT_PUBLIC_GRAPHQL_ENDPOINT=https://api.studio.thegraph.com/proxy/87779/usetrail/y
 ```
 
 ### **Run the Development Server**
