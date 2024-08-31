@@ -6,9 +6,9 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Auth
-    network: mainnet
+    network: localhost 
     source:
-      address: "0xAuthContractAddress"
+      address: "0x1234567890abcdef1234567890abcdef12345678"
       abi: Auth
       startBlock: 12345678
     mapping:
@@ -23,15 +23,15 @@ dataSources:
         - name: RoleManagement
           file: ./abis/RoleManagement.json
       eventHandlers:
-        - event: UserAuthorized(address)
+        - event: UserAuthorized(indexed address)
           handler: handleUserAuthorized
       file: ./src/mapping.ts
 
   - kind: ethereum/contract
     name: RoleManagement
-    network: mainnet
+    network: localhost 
     source:
-      address: "0xRoleManagementContractAddress"
+      address: "0x1234567890abcdef1234567890abcdef12345678"
       abi: RoleManagement
       startBlock: 12345678
     mapping:
@@ -44,15 +44,15 @@ dataSources:
         - name: RoleManagement
           file: ./abis/RoleManagement.json
       eventHandlers:
-        - event: RoleAssigned(address, string)
+        - event: RoleAssigned(indexed address,string)
           handler: handleRoleAssigned
       file: ./src/mapping.ts
 
   - kind: ethereum/contract
     name: PaymentSystem
-    network: mainnet
+    network: localhost 
     source:
-      address: "0xPaymentSystemContractAddress"
+      address: "0x1234567890abcdef1234567890abcdef12345678"
       abi: PaymentSystem
       startBlock: 12345678
     mapping:
@@ -71,15 +71,15 @@ dataSources:
         - name: RoleManagement
           file: ./abis/RoleManagement.json
       eventHandlers:
-        - event: PaymentMade(address , address, uint256, uint256)
+        - event: PaymentMade(indexed address,indexed address,uint256,uint256)
           handler: handlePaymentMade
       file: ./src/mapping.ts
 
   - kind: ethereum/contract
     name: ShipmentTracking
-    network: mainnet
+    network: localhost 
     source:
-      address: "0xShipmentTrackingContractAddress"
+      address: "0x1234567890abcdef1234567890abcdef12345678"
       abi: ShipmentTracking
       startBlock: 12345678
     mapping:
@@ -98,8 +98,8 @@ dataSources:
         - name: PaymentSystem
           file: ./abis/PaymentSystem.json
       eventHandlers:
-        - event: ShipmentCreated(uint256,string, string, address)
+        - event: ShipmentCreated(uint256,string,string,address)
           handler: handleShipmentCreated
-        - event: ShipmentUpdated(uint256,string, string, address)
+        - event: StatusUpdated(uint256,string,address)
           handler: handleShipmentUpdated  
       file: ./src/mapping.ts
